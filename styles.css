@@ -1,0 +1,90 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+}
+
+.meme-generator {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.meme-generator h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.meme-form input,
+.meme-form button {
+  display: block;
+  margin: 15px auto;
+  padding: 12px;
+  width: calc(100% - 24px);
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 1em;
+}
+
+.meme-form input {
+  text-align: center;
+}
+
+.meme-form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.meme-form button:hover {
+  background-color: #0056b3;
+}
+
+.meme-result {
+  margin-top: 20px;
+}
+
+#memeCanvas {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#downloadMeme {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#downloadMeme:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 600px) {
+  .meme-generator {
+    padding: 20px;
+  }
+
+  .meme-form input,
+  .meme-form button {
+    width: calc(100% - 20px);
+  }
+}
