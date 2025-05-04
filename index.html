@@ -5,20 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="meme-generator">
+    <div class="meme-generator" role="main">
         <h1>Meme Generator</h1>
-        <div class="meme-form">
-            <input type="text" id="topText" placeholder="Top Text">
-            <input type="text" id="bottomText" placeholder="Bottom Text">
-            <input type="file" id="imageUpload" accept="image/*">
-            <button id="generateMeme">Generate Meme</button>
-        </div>
-        <div class="meme-result">
-            <canvas id="memeCanvas"></canvas>
-            <br>
-            <button id="downloadMeme">Download Meme</button>
+        <div class="meme-container">
+            <div class="meme-form">
+                <div class="input-group">
+                    <label for="topText">Top Text</label>
+                    <input type="text" id="topText" placeholder="Enter top text" aria-label="Top text for meme">
+                    <div class="size-control">
+                        <label for="topTextSize">Size</label>
+                        <button id="decreaseTopTextSize" aria-label="Decrease top text size">−</button>
+                        <input type="number" id="topTextSize" min="10" max="100" value="40" aria-label="Top text size">
+                        <button id="increaseTopTextSize" aria-label="Increase top text size">+</button>
+                    </div>
+                    <div class="position-control">
+                        <label>Position</label>
+                        <button id="topTextUp" aria-label="Move top text up">↑</button>
+                        <button id="topTextDown" aria-label="Move top text down">↓</button>
+                        <button id="topTextLeft" aria-label="Move top text left">←</button>
+                        <button id="topTextRight" aria-label="Move top text right">→</button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="bottomText">Bottom Text</label>
+                    <input type="text" id="bottomText" placeholder="Enter bottom text" aria-label="Bottom text for meme">
+                    <div class="size-control">
+                        <label for="bottomTextSize">Size</label>
+                        <button id="decreaseBottomTextSize" aria-label="Decrease bottom text size">−</button>
+                        <input type="number" id="bottomTextSize" min="10" max="100" value="40" aria-label="Bottom text size">
+                        <button id="increaseBottomTextSize" aria-label="Increase bottom text size">+</button>
+                    </div>
+                    <div class="position-control">
+                        <label>Position</label>
+                        <button id="bottomTextUp" aria-label="Move bottom text up">↑</button>
+                        <button id="bottomTextDown" aria-label="Move bottom text down">↓</button>
+                        <button id="bottomTextLeft" aria-label="Move bottom text left">←</button>
+                        <button id="bottomTextRight" aria-label="Move bottom text right">→</button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="imageUpload">Upload Image</label>
+                    <input type="file" id="imageUpload" accept="image/*" aria-label="Upload image for meme">
+                </div>
+                <div class="input-group">
+                    <label for="canvasSize">Canvas Size</label>
+                    <select id="canvasSize" aria-label="Select canvas size">
+                        <option value="300">Click to Select</option>
+                        <option value="300">300x300</option>
+                        <option value="400">400x400</option>
+                        <option value="500">500x500</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Image Scale</label>
+                    <div class="size-control">
+                        <button id="decreaseImageScale" aria-label="Decrease image scale">−</button>
+                        <span id="imageScaleDisplay" aria-live="polite">1.0x</span>
+                        <button id="increaseImageScale" aria-label="Increase image scale">+</button>
+                    </div>
+                </div>
+                <button id="generateMeme" class="primary-button">Generate Meme</button>
+            </div>
+            <div class="meme-result">
+                <p class="hint">Click and drag or use buttons to position text</p>
+                <canvas id="memeCanvas" aria-label="Meme preview"></canvas>
+                <button id="downloadMeme" class="secondary-button">Download Meme</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
