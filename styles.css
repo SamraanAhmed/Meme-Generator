@@ -121,7 +121,7 @@ body {
 
 .size-control button,
 .position-control button {
-  width: 28px;
+  width: 60px;
   height: 28px;
   padding: 0;
   background: #6c757d;
@@ -195,7 +195,10 @@ body {
   outline: none;
   box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.3);
 }
-
+#increaseImageScale,
+#decreaseImageScale {
+  width: 30px;
+}
 /* Meme result section */
 .meme-result {
   display: flex;
